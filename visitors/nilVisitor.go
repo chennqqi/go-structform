@@ -1,6 +1,6 @@
 package visitors
 
-import structform "github.com/elastic/go-structform"
+import structform "github.com/chennqqi/go-structform"
 
 type emptyVisitor struct {
 }

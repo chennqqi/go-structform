@@ -3,7 +3,7 @@ package sftest
 import (
 	"testing"
 
-	structform "github.com/elastic/go-structform"
+	structform "github.com/chennqqi/go-structform"
 )
 
 func TestRecordingConsistent(t *testing.T) {

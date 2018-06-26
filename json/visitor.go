@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"unicode/utf8"
 
-	structform "github.com/elastic/go-structform"
+	structform "github.com/chennqqi/go-structform"
 )
 
 // Visitor implements the structform.Visitor interface, json encoding the
@@ -17,8 +17,9 @@ type Visitor struct {
 
 	scratch [64]byte
 
-	first   boolStack
-	inArray boolStack
+	first      boolStack
+	inArray    boolStack
+	escapeHtml bool
 }
 
 type boolStack struct {
@@ -39,8 +40,12 @@ func (w writer) write(b []byte) error {
 }
 
 func NewVisitor(out io.Writer) *Visitor {
-	v := &Visitor{w: writer{out}}
+	v := &Visitor{w: writer{out}, escapeHtml: true}
 	return v
+}
+
+func (vs *Visitor) SetHtmlEscape(b bool) {
+	vs.escapeHtml = b
 }
 
 func (vs *Visitor) writeByte(b byte) error {
@@ -163,6 +168,16 @@ func (vs *Visitor) OnString(s string) error {
 			case '\t':
 				vs.scratch[0], vs.scratch[1] = '\\', 't'
 				vs.w.write(vs.scratch[:2])
+			case '<', '>', '&':
+				if vs.escapeHtml {
+					vs.scratch[0], vs.scratch[1], vs.scratch[2], vs.scratch[3] = '\\', 'u', '0', '0'
+					vs.scratch[4] = hex[b>>4]
+					vs.scratch[5] = hex[b&0xF]
+					vs.w.write(vs.scratch[:6])
+				} else {
+					vs.w.write([]byte{b})
+				}
+
 			default:
 				// This vsodes bytes < 0x20 except for \n and \r,
 				// as well as <, > and &. The latter are escaped because they

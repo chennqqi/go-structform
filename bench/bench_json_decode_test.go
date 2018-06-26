@@ -8,8 +8,8 @@ import (
 
 	stdjson "encoding/json"
 
-	"github.com/elastic/go-structform/json"
-	"github.com/elastic/go-structform/visitors"
+	"github.com/chennqqi/go-structform/json"
+	"github.com/chennqqi/go-structform/visitors"
 )
 
 func BenchmarkDecodeBeatsEvents(b *testing.B) {

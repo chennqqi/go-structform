@@ -11,7 +11,7 @@ import (
 	"unicode/utf16"
 	"unicode/utf8"
 
-	structform "github.com/elastic/go-structform"
+	structform "github.com/chennqqi/go-structform"
 )
 
 type Parser struct {

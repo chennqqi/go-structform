@@ -4,8 +4,8 @@ import (
 	"bytes"
 	"testing"
 
-	structform "github.com/elastic/go-structform"
-	"github.com/elastic/go-structform/sftest"
+	structform "github.com/chennqqi/go-structform"
+	"github.com/chennqqi/go-structform/sftest"
 )
 
 func TestEncParseConsistent(t *testing.T) {

@@ -6,7 +6,7 @@ import (
 	"math"
 	"strconv"
 
-	structform "github.com/elastic/go-structform"
+	structform "github.com/chennqqi/go-structform"
 )
 
 type Visitor struct {

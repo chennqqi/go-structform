@@ -6,7 +6,7 @@ import (
 	"unicode"
 	"unicode/utf8"
 
-	structform "github.com/elastic/go-structform"
+	structform "github.com/chennqqi/go-structform"
 )
 
 type typeFoldRegistry struct {

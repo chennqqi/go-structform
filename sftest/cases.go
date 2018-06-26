@@ -1,6 +1,6 @@
 package sftest
 
-import structform "github.com/elastic/go-structform"
+import structform "github.com/chennqqi/go-structform"
 
 var Samples = concatSamples(
 	SamplesPrimitives,

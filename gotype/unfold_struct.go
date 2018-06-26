@@ -8,7 +8,7 @@ import (
 	"unicode/utf8"
 	"unsafe"
 
-	structform "github.com/elastic/go-structform"
+	structform "github.com/chennqqi/go-structform"
 )
 
 type unfolderStruct struct {

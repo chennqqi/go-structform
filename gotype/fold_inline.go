@@ -3,8 +3,8 @@ package gotype
 import (
 	"reflect"
 
-	"github.com/elastic/go-structform"
-	"github.com/elastic/go-structform/visitors"
+	"github.com/chennqqi/go-structform"
+	"github.com/chennqqi/go-structform/visitors"
 )
 
 // getReflectFoldMapKeys implements inline fold of a map[string]X type,

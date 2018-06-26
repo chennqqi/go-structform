@@ -4,8 +4,8 @@ import (
 	"runtime"
 	"testing"
 
-	structform "github.com/elastic/go-structform"
-	"github.com/elastic/go-structform/sftest"
+	structform "github.com/chennqqi/go-structform"
+	"github.com/chennqqi/go-structform/sftest"
 )
 
 type mapstr map[string]interface{}

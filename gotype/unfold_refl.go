@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"unsafe"
 
-	structform "github.com/elastic/go-structform"
+	structform "github.com/chennqqi/go-structform"
 )
 
 type liftedReflUnfolder struct{ unfolder ptrUnfolder }

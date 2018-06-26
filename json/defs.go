@@ -1,6 +1,6 @@
 package json
 
-import "github.com/elastic/go-structform/internal/unsafe"
+import "github.com/chennqqi/go-structform/internal/unsafe"
 
 var (
 	nullSymbol  = []byte("null")

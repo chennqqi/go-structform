@@ -3,7 +3,7 @@ package cborl
 import (
 	"io"
 
-	structform "github.com/elastic/go-structform"
+	structform "github.com/chennqqi/go-structform"
 )
 
 type Decoder struct {
